@@ -14,7 +14,7 @@ const Accordion = ({ items }) => {
       </div>
     );
   });
-  return <h1>{renderedItems}</h1>;
+  return <div className="ui styled accordion">{renderedItems}</div>;
 };
 
 export default Accordion;
