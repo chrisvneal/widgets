@@ -6,9 +6,8 @@ const Search = () => {
 
   useEffect(() => {
     const search = async () => {
-      const url =
-        "?action=query&list=search&format=json&origin=*&srsearch=programming";
-      await axios.get("https://en.wikipedia.org/w/api.php", {
+      const url = "https://en.wikipedia.org/w/api.php";
+      await axios.get(url, {
         params: {
           action: "query",
           list: "search",
