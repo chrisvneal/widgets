@@ -33,7 +33,7 @@ const Search = () => {
       setResults(data.query.search);
     };
 
-    search();
+    debouncedTerm && search();
   }, [debouncedTerm]);
 
   // end of 2nd useEffect
