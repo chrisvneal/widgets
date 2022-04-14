@@ -25,6 +25,10 @@ const Search = () => {
       // only conduct a search if there is a term
       term && search();
     }, 500);
+
+    return () => {
+      clearTimeout(timeoutId);
+    };
   }, [term]);
 
   const renderedResults = results.map((result) => {
