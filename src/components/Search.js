@@ -16,10 +16,11 @@ const Search = () => {
     };
   }, [term]);
 
+  // 2nd useEffect
+
   useEffect(() => {
     const search = async () => {
-      const url = "https://en.wikipedia.org/w/api.php";
-      const { data } = await axios.get(url, {
+      const { data } = await axios.get("https://en.wikipedia.org/w/api.php", {
         params: {
           action: "query",
           list: "search",
@@ -34,6 +35,8 @@ const Search = () => {
 
     search();
   }, [debouncedTerm]);
+
+  // end of 2nd useEffect
 
   const renderedResults = results.map((result) => {
     return (
