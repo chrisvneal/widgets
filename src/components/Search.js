@@ -21,7 +21,8 @@ const Search = () => {
       setResults(data.query.search);
     };
 
-    search();
+    // only conduct a search if there is a term
+    term && search();
   }, [term]);
 
   const renderedResults = results.map((result) => {
