@@ -21,8 +21,10 @@ const Search = () => {
       setResults(data.query.search);
     };
 
-    // only conduct a search if there is a term
-    term && search();
+    const timeoutId = setTimeout(() => {
+      // only conduct a search if there is a term
+      term && search();
+    }, 500);
   }, [term]);
 
   const renderedResults = results.map((result) => {
