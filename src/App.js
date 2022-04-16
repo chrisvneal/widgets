@@ -28,7 +28,7 @@ const options = [
     value: "green"
   },
   {
-    label: "The Color Blue",
+    label: "A Shade of Blue",
     value: "blue"
   }
 ];
@@ -36,7 +36,7 @@ const options = [
 export default () => {
   return (
     <div>
-      <Dropdown />
+      <Dropdown options={options} />
     </div>
   );
 };
