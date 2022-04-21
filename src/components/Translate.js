@@ -18,8 +18,16 @@ const options = [
 
 const Translate = () => {
   const [language, setLanguage] = useState(options[0]);
+  const [text, setText] = useState("");
+
   return (
     <div>
+      Enter text
+      <input
+        type="text"
+        value={text}
+        onChange={(e) => setText(e.target.value)}
+      />
       <Dropdown
         options={options}
         selected={language}
