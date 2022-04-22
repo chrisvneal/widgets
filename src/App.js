@@ -7,37 +7,39 @@ import Translate from "./components/Translate";
 const items = [
   {
     title: "What is React?",
-    content: "React is a front end JavaScript famework."
+    content: "React is a front end JavaScript famework.",
   },
   {
     title: "Why use React?",
-    content: "React is a favorite JS library among engineers."
+    content: "React is a favorite JS library among engineers.",
   },
   {
     title: "How do you use React?",
-    content: "you use React by creating components."
-  }
+    content: "you use React by creating components.",
+  },
 ];
 
 const options = [
   {
     label: "The Color Red",
-    value: "red"
+    value: "red",
   },
   {
     label: "The Color Green",
-    value: "green"
+    value: "green",
   },
   {
     label: "A Shade of Blue",
-    value: "blue"
-  }
+    value: "blue",
+  },
 ];
 
+const showAccordion = () => {
+  if (window.location.pathname === "/") {
+    return <Accordion items={items} />;
+  }
+};
+
 export default () => {
-  return (
-    <div>
-      <Translate />
-    </div>
-  );
+  return <div>{showAccordion()}</div>;
 };
