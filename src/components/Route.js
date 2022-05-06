@@ -1,7 +1,8 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 const Route = ({ path, children }) => {
+  const [currentPath, setCurrentPath] = useState(window.location.pathname);
   const onLocationChange = () => {
-    console.log("Location chnaged");
+    setCurrentPath(window.location.pathname);
   };
   useEffect(() => {
     window.addEventListener("popstate", onLocationChange);
@@ -10,7 +11,9 @@ const Route = ({ path, children }) => {
       window.removeEventListener("popstate", onLocationChange);
     };
   });
-  return window.location.pathname === path ? children : null;
+
+  // if the path in state matches the path of the component, show its contents
+  return currentPath === path ? children : null;
 };
 
 export default Route;
